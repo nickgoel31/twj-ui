@@ -1,26 +1,29 @@
 {
   "name": "twj-ui",
   "version": "1.0.0",
-  "main": "index.ts",
-  "bin": "./dist/cli.js",
-  "files":["dist"],
+  "bin": "./dist/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup",
+    "dev": "npx ts-node --esm src/index.ts",
+    "cli": "node --loader ts-node/esm src/index.ts"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "nick31",
+  "license": "MIT",
+  "description": "A component library build on top of react-aria",
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
+    "@types/figlet": "^1.5.8",
     "commander": "^12.1.0",
-    "next": "^14.2.5",
+    "figlet": "^1.7.0",
     "ora": "^8.0.1",
-    "postcss": "^8.4.41",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "rollup": "^4.20.0",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4"
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "util": "^0.12.5"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "ts-node": "^10.9.2"
   }
 }
